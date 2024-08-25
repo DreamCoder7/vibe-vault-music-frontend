@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-// Button
-interface ButtonProps {
-  highlight?: boolean;
-  isLoading?: boolean;
-}
+import { IoClose } from "react-icons/io5";
 
+import { ButtonProps, SidebarLinkProps } from "../../types/props/styled.props";
+
+// Button
 const StyledButton = styled.button<ButtonProps>`
+  all: unset;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -17,16 +17,17 @@ const StyledButton = styled.button<ButtonProps>`
   font-size: 0.875rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 
   ${({ highlight }) =>
     highlight
       ? css`
-          background-color: #f1faff; /* Light primary background */
-          color: #ffffff; /* Text color */
+          background-color: #c026d3;
+          color: #ffffff;
         `
       : css`
-          background-color: #ffffff; /* Light background */
-          color: #1d4ed8; /* Primary text color */
+          background-color: #ffffff;
+          color: #1d4ed8;
         `}
 `;
 
@@ -36,10 +37,10 @@ const IconWrapper = styled.div<ButtonProps>`
   ${({ highlight }) =>
     highlight
       ? css`
-          color: #1d4ed8; /* Primary text color */
+          color: #fff;
         `
       : css`
-          color: #ffffff; /* Text color */
+          color: #444;
         `}
 `;
 
@@ -48,10 +49,6 @@ const LoadingWrapper = styled.div`
 `;
 
 // Sidebar Link
-
-interface SidebarLinkProps {
-  isActive?: boolean;
-}
 
 const StyledLink = styled(Link)<SidebarLinkProps>`
   display: flex;
@@ -67,12 +64,12 @@ const StyledLink = styled(Link)<SidebarLinkProps>`
   ${({ isActive }) =>
     isActive
       ? css`
-          background-color: #e0f2fe; /* Light primary background */
-          color: #4a5568; /* Text color */
+          background-color: #c026d3;
+          color: #fff;
         `
       : css`
           background-color: transparent;
-          color: #4a5568; /* Text color */
+          color: #4a5568;
         `}
 
   /* Dark mode styles if needed */
@@ -87,13 +84,63 @@ const SidebarIconWrapper = styled.span`
   gap: 0.5rem;
 `;
 
-// Page Ttitle
+// Page Title
 const StyledPageTitle = styled.h1`
   font-weight: 500;
   text-transform: capitalize;
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
   color: #444;
   padding: 40px;
+`;
+
+// Modal Overlay
+const Overlay = styled.div`
+  z-index: 40;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5)
+  transition: opacity 0.3s ease;
+`;
+
+// Modal Container
+const ModalContainer = styled.div`
+  z-index: 50;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+`;
+
+// Modal Content
+const ModalContent = styled.div`
+  position: relative;
+  background: ${({ theme }) => theme.colors.modalBackground};
+  padding: 1.5rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+`;
+
+// Close Button
+const CloseButton = styled(IoClose)`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: ${({ theme }) => theme.colors.closeButton};
+`;
+
+// Title
+const ModalTitle = styled.h3`
+  font-weight: 600;
+  font-size: 1.125rem; /* Text size */
+  margin-bottom: 1rem;
+  color: #1d4ed8;
 `;
 
 export {
@@ -103,4 +150,9 @@ export {
   StyledButton,
   LoadingWrapper,
   StyledPageTitle,
+  ModalTitle,
+  CloseButton,
+  Overlay,
+  ModalContainer,
+  ModalContent,
 };

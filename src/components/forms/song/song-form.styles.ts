@@ -40,4 +40,4 @@ const Button = styled.button`
   }
 `;
 
-export { Form, Input, Button, FormField, Label };
+export { Form, FormField, Label, Input, Button };

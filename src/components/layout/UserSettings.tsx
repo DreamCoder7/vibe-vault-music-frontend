@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   SettingsContainer,
   NotificationIcon,
@@ -7,12 +8,18 @@ import {
 } from "./layout.styles";
 
 const UserSettings = () => {
+  const push = useNavigate();
+
+  const handleLogout = () => {
+    push("/auth/login");
+  };
+
   return (
     <SettingsContainer>
       <Button>
         <NotificationIcon />
       </Button>
-      <LogoutButton onClick={() => {}}>
+      <LogoutButton onClick={handleLogout}>
         <LogoutIcon />
         Logout
       </LogoutButton>

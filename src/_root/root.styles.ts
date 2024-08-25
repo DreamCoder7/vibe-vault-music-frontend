@@ -41,7 +41,6 @@ const StyledLink = styled(Link)`
 `;
 
 // ErrorBoundary Fallback styles
-
 const FallbackContainer = styled.section`
   display: flex;
   justify-content: center;

@@ -5,4 +5,13 @@ const LoginSchema = object().shape({
   password: string().required(),
 });
 
-export { LoginSchema };
+const SongSchema = object().shape({
+  title: string().required(),
+  artist: string().required(),
+  album: string().required(),
+  genre: string().required(),
+  duration: string().required(),
+  lyrics: string().required(),
+});
+
+export { LoginSchema, SongSchema };

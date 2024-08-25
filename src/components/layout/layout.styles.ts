@@ -98,6 +98,8 @@ const Logo = styled.div`
   width: 3rem;
   height: 3rem;
   margin-left: 1rem;
+  font-weight: bold;
+  color: #c026d3;
 `;
 
 const AsideMenu = styled.div`
