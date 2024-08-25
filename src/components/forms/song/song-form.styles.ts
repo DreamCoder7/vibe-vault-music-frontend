@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 const Form = styled.form`
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
+  padding-left: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 `;
 
@@ -36,8 +37,19 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #be185d;
+    background-color: #86198f;
   }
 `;
 
-export { Form, FormField, Label, Input, Button };
+const BtnContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  grid-column: span 2;
+`;
+
+const Textarea = styled.textarea`
+  padding: 20px;
+`;
+
+export { Form, FormField, Label, Input, Button, BtnContainer, Textarea };

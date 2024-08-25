@@ -13,4 +13,14 @@ const TableTopToolBarContainer = styled.div`
   grid-column: auto;
 `;
 
-export { TableContainer, SongSection, TableTopToolBarContainer };
+const ActionsCellWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export {
+  TableContainer,
+  SongSection,
+  TableTopToolBarContainer,
+  ActionsCellWrapper,
+};

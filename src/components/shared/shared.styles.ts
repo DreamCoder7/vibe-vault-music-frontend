@@ -27,7 +27,7 @@ const StyledButton = styled.button<ButtonProps>`
         `
       : css`
           background-color: #ffffff;
-          color: #1d4ed8;
+          color: #444;
         `}
 `;
 
@@ -98,7 +98,9 @@ const Overlay = styled.div`
   z-index: 40;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5)
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease;
 `;
 
@@ -117,7 +119,7 @@ const ModalContainer = styled.div`
 // Modal Content
 const ModalContent = styled.div`
   position: relative;
-  background: ${({ theme }) => theme.colors.modalBackground};
+  background: #f9fafb;
   padding: 1.5rem;
   border-radius: 20px;
   width: 100%;
@@ -132,15 +134,14 @@ const CloseButton = styled(IoClose)`
   right: 1rem;
   cursor: pointer;
   font-size: 2rem;
-  color: ${({ theme }) => theme.colors.closeButton};
+  color: #444;
 `;
 
 // Title
 const ModalTitle = styled.h3`
   font-weight: 600;
-  font-size: 1.125rem; /* Text size */
+  font-size: 1.125rem;
   margin-bottom: 1rem;
-  color: #1d4ed8;
 `;
 
 export {

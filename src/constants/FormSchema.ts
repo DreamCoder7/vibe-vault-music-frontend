@@ -11,7 +11,8 @@ const SongSchema = object().shape({
   album: string().required(),
   genre: string().required(),
   duration: string().required(),
-  lyrics: string().required(),
+  lyrics: string(),
+  year: string(),
 });
 
 export { LoginSchema, SongSchema };

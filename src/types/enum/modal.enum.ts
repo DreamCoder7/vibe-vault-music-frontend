@@ -1,6 +1,7 @@
 enum SONGMODALS {
   ADD_SONG = "ADD_SONG",
   UPDATE_SONG = "UPDATE_SONG",
+  VIEW_SONG = "VIEW_SONG"
 }
 
 export { SONGMODALS };

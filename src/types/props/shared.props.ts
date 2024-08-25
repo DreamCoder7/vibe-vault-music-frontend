@@ -26,4 +26,27 @@ type ModalProps = {
   children: React.ReactNode;
 };
 
-export type { ButtonProps, SidebarLinkProps, ModalProps };
+type UIModal = {
+  type: string;
+  isOpen: boolean;
+};
+
+type UIState = {
+  modal: UIModal;
+};
+
+type ActionCellProps = {
+  Icon: IconType;
+  title: string;
+  onClick: () => void;
+  className?: string;
+  id?: string;
+};
+
+export type {
+  ButtonProps,
+  SidebarLinkProps,
+  ModalProps,
+  UIState,
+  ActionCellProps,
+};

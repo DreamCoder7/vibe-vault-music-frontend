@@ -4,6 +4,9 @@ interface CreateSongDto {
   album: string;
   genre: string;
   duration: string;
+  lyrics?: string;
+  year?: string;
+  _id?: string;
 }
 
 export type { CreateSongDto };
