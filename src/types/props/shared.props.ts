@@ -11,4 +11,12 @@ type ButtonProps = {
   id?: string;
 };
 
-export type { ButtonProps };
+type SidebarLinkProps = {
+  title: string;
+  to: string;
+  Icon?: IconType;
+  isActive: boolean;
+  onClick?: () => void;
+};
+
+export type { ButtonProps, SidebarLinkProps };

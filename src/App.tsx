@@ -11,11 +11,33 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { LoginPage } from "./_auth";
 import { FallbackRender, PageNotFound } from "./_root";
+import RootLayout from "./components/layout/RootLayout";
+import { lazy, Suspense } from "react";
 
 const PrivateRoutes = () => {
+  const LazyDashboardPage = lazy(() => import("./_root/dashboard/page"));
+  const LazySongPage = lazy(() => import("./_root/song/page"));
+
   return (
     <Routes>
-      <Route path="/dashboard" element={<div>Dashboard</div>} />
+      <Route path="/" element={<RootLayout />}>
+        <Route
+          path="dashboard"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyDashboardPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="songs"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazySongPage />
+            </Suspense>
+          }
+        />
+      </Route>
     </Routes>
   );
 };
