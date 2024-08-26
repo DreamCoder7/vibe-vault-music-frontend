@@ -1,6 +1,7 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   Route,
   RouterProvider,
   Routes,
@@ -48,6 +49,7 @@ const routes = createRoutesFromElements(
     <Route path="/*" element={<PrivateRoutes />} />
     <Route path="/auth/*" element={<LoginPage />} />
     <Route path="*" element={<PageNotFound />} />
+    <Route path="/" element={<Navigate to={"/auth"} />} />
   </Route>
 );
 
