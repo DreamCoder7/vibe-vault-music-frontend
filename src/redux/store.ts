@@ -7,6 +7,7 @@ import { apiSlice } from "./api/apiSlice";
 import uiReducer from "./slice/ui/uiSlice";
 import songReducer from "./slice/song/songSlice";
 import authReducer from "./slice/auth/authSlice";
+import statisticsReducer from "./slice/stats/statisticsSlice";
 
 import rootSaga from "./rootSaga";
 
@@ -19,6 +20,7 @@ const store = configureStore({
     ui: uiReducer,
     songs: songReducer,
     auth: authReducer,
+    stats: statisticsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware, apiSlice.middleware),

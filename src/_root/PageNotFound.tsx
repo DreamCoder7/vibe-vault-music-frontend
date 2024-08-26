@@ -5,21 +5,16 @@ import { Button } from "../components/shared";
 import {
   Container,
   ErrorText,
-  ErrorTitle,
-  ErrorSubtitle,
   ErrorMessage,
   StyledLink,
+  Image,
 } from "./root.styles";
 
 const PageNotFound: React.FC = () => {
   return (
     <Container>
+      <Image src="/page-not-found.svg" alt="page-not-found-illustration" />
       <ErrorText>Oops! Page not found</ErrorText>
-      <ErrorTitle>
-        <ErrorSubtitle>4</ErrorSubtitle>
-        <ErrorSubtitle>0</ErrorSubtitle>
-        <ErrorSubtitle>4</ErrorSubtitle>
-      </ErrorTitle>
       <ErrorMessage>
         We are sorry, but the page you requested was not found
       </ErrorMessage>

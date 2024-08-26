@@ -1,5 +1,6 @@
 import { IntroDashboardImg } from "../../assets";
 import PageTitle from "../../components/shared/PageTitle";
+import Statistics from "./components/Statistics";
 import {
   Intro,
   IntroContent,
@@ -27,6 +28,8 @@ const DashboardPage = () => {
           </IntroText>
         </IntroContent>
       </Intro>
+
+      <Statistics />
     </section>
   );
 };

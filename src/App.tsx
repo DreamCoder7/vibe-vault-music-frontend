@@ -38,6 +38,7 @@ const PrivateRoutes = () => {
           }
         />
       </Route>
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };

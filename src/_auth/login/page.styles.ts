@@ -22,6 +22,7 @@ const AuthBackground = styled.div`
 
 const ContentWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 `;
@@ -31,4 +32,25 @@ const Illustration = styled.img`
   width: 100%;
 `;
 
-export { PageSection, AuthBackground, ContentWrapper, Illustration };
+const Title = styled.h1`
+  font-weight: 500;
+`;
+
+const Description = styled.p``;
+
+const HeadlineContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export {
+  PageSection,
+  AuthBackground,
+  ContentWrapper,
+  Illustration,
+  Title,
+  Description,
+  HeadlineContent,
+};

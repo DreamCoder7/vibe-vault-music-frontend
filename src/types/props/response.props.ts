@@ -82,3 +82,13 @@ export interface SongModel {
 export interface ApiResponse<T> {
   data: T;
 }
+
+interface StatisticsResponse {
+  status: string;
+  data: {
+    labels: string[];
+    values: number[];
+  };
+}
+
+export type { StatisticsResponse };

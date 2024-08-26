@@ -16,6 +16,12 @@ import {
 } from "./slice/song/songSlice";
 import { toast } from "react-toastify";
 import { apiRequest } from "../lib/apiRequest";
+import {
+  fetchStatisticsFailure,
+  fetchStatisticsRequest,
+  fetchStatisticsSuccess,
+} from "./slice/stats/statisticsSlice";
+import { StatisticsModel } from "../types/model/dashboard.model";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
@@ -60,7 +66,7 @@ function* updateSong(action: ReturnType<typeof updateSongRequest>) {
     const data: SongModel = yield call(
       apiRequest,
       `${BASE_URL}/songs/${action.payload._id}`,
-      "PUT",
+      "PATCH",
       action.payload
     );
     yield put(updateSongSuccess(data));
@@ -91,6 +97,22 @@ function* deleteSong(action: ReturnType<typeof deleteSongRequest>) {
   }
 }
 
+// Fetch statistics
+function* fetchStatistics() {
+  try {
+    const data: StatisticsModel = yield call(
+      apiRequest,
+      `${BASE_URL}/songs/stats`,
+      "GET"
+    );
+    yield put(fetchStatisticsSuccess(data));
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "An unexpected error occurred";
+    yield put(fetchStatisticsFailure(message));
+  }
+}
+
 // Combine sagas
 function* songSagas() {
   yield all([
@@ -98,6 +120,7 @@ function* songSagas() {
     takeEvery(createSongRequest.type, createSong),
     takeEvery(updateSongRequest.type, updateSong),
     takeEvery(deleteSongRequest.type, deleteSong),
+    takeEvery(fetchStatisticsRequest.type, fetchStatistics),
   ]);
 }
 

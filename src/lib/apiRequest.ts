@@ -9,7 +9,7 @@ interface Response<T> {
 
 function* apiRequest<T>(
   url: string,
-  method: "GET" | "POST" | "PUT" | "DELETE",
+  method: "GET" | "POST" | "PATCH" | "DELETE",
   data?: T
 ): Generator<any, T, any> {
   const config: AxiosRequestConfig = {

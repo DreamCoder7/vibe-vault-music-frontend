@@ -41,6 +41,10 @@ const IntroText = styled.p`
   width: 70%;
 `;
 
+const StatisticsContainer = styled.div`
+  padding-left: 50px;
+`;
+
 export {
   Intro,
   IntroImg,
@@ -48,4 +52,5 @@ export {
   IntroImgContainer,
   IntroText,
   IntroTitle,
+  StatisticsContainer,
 };
